@@ -1,8 +1,8 @@
 import sqlite3
-from time import datetime, time, strptime
+import datetime, time
 
 def connect_db():
-	return sqlite3connect("tipsy.db")
+	return sqlite3.connect("tipsy.db")
 
 def new_user(db, email, password, name):
 	c = db.cursor()
@@ -30,7 +30,7 @@ def new_task(db, title, user_id):
 
 def get_user(db, user_id):
 	c = db.cursor
-	query ="""SELECT * FROM Users WHERE id=?"""
+	query ="""SELECT * FROM Users WHERE user_id=?"""
 	c.execute(query, user_id)
 	result = c.fetchone()
 	fields = ["id", "email", "password", "name"]
@@ -40,12 +40,30 @@ def get_user(db, user_id):
 
 def complete_task(db, task_id):
 	c = db.cursor
-	query = """UPDATE tasks column="completed_at" WHERE id=?"""
+	now = datetime.datetime.now()
+	query = """UPDATE Tasks SET completed_at=now WHERE id=?"""
 	result = c.execute(query, task_id)
-	db.commit
+	db.commit()
+	return result.lastrowid
 
 def get_tasks(db, user_id):
-	pass
+	c = db.cursor
+	query = """SELECT * FROM Tasks WHERE user_id=?"""
+	c.execute(query, user_id)
+	result = c.fetchone()
+	list_dict = []
+	fields = ["id", "title", "created_at", "completed_at", "user_id"]
+	if user_id != None:
+		for element in result:
+			return list_dict.append(dict(zip(fields, element)))
+	else:
+		for tasks in Tasks:
+			return list_dict.append(dict(zip(fields, tasks)))
 
 def get_task(db, task_id):
-	pass
+	c = db.cursor
+	query = """SELECT * FROM Tasks WHERE id=?"""
+	c.execute(query, task_id)
+	result = c.fetchone()
+	fields = ["id", "title", "created_at", "completed_at", "user_id"]
+	return dict(zip(fields, result))
