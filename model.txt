@@ -1,0 +1,37 @@
+Tipsy Model:
+
+User:
+- id
+- email
+- password
+- name
+
+Task:
+- id
+- title
+- created_at
+- completed_at
+- user_id
+
+A User has many Tasks.
+A Task belongs to a User.
+
+
+
+create table User
+columns
+
+id - Integer, Primary Key
+email - VarChar(100)
+password - VarChar(100)
+name - VarChar(100)
+
+
+create table Task
+columns
+
+id - Integer, Primary Key
+title - VarChar(150)
+created_at - DateTime
+completed_at - DateTime
+user_id - Integer
