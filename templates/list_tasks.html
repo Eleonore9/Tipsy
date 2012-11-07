@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Tasks</title>
+	<link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="/static/css/tipsy.css" type="text/css">
+</head>
+
+<body>
+	
+	<div class="title_span">
+	<h1>Tasks List</h1>
+	</div>
+
+	<div class="list_span">
+		<ul> 
+			{% for item in list_all_tasks %}
+			<li>
+				<p class="text-info">
+				Task {{ item["id"] }}: {{ item["title"] }}	
+				<input type="submit" value="Completed" method="POST" action="/task_completed"></input>
+					{% if %}
+					on : {{ item["completed_at"] }}
+					{% endif %}
+				{{ completed_at }}
+				</p>
+	
+			</li>
+			
+			{% endfor %}
+		</ul>
+	</div>     
+
+	<div class="form_task">
+	<form action="/save_task" method="POST">
+		<label> New Task </label>
+		<input type="text" name="task_title"></input>
+		<input type="submit" value="Submit"></input>
+	</form>    
+	</div> 
+	<a class="btn btn-info" href="/logout" method="GET">Log out</a>                                                                           
+</body>
+
+</html>
