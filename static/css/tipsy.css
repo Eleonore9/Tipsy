@@ -1,0 +1,82 @@
+.title_tipsy {
+	border:2px solid grey;
+	border-radius: 10px 10px;
+	box-shadow: 5px 5px 15px 5px;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 200px;
+	padding-left: 20px;
+	background-color: white;
+}
+
+.text-info {
+
+	padding-top:20px;
+}
+
+.title_span {
+	/*border:1px solid red;*/
+	margin-left: auto;
+	margin-top: auto;
+	padding: 10px;
+	width: 200px;
+}
+	
+.list_span {	
+	/*border:1px solid red;*/
+	margin-left: auto;
+	margin-top: auto;
+	padding: 10px;
+	width: 500px;
+}
+
+.background_body {
+	border:1px solid green;
+	background-color: #CBD7ED;
+	height: 400px
+}
+
+.form_login {
+	border:2px solid green;
+	border-radius: 10px 10px;
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	padding: 40px;	
+	height: 100px;
+}
+
+.form_task {
+	border:2px solid green;
+	border-radius: 10px 10px;
+	width: 300px;
+	margin-left: 800px;
+	margin-right: auto;
+	margin-top: 50px;
+	padding: 40px;	
+	height: 100px;
+}
+
+form label {
+	padding-left: 60px;
+	padding-bottom: 5px;
+	font-weight: bold;
+	font-size: 1.5em;
+	margin-bottom: 5px;
+}
+
+ul {
+	font-size:1.2em;
+}
+
+.list_span input {
+	margin-right:10px;
+}
+
+.btn {
+	margin-top:100px;
+	margin-left:200px;
+
+}

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Tipsy</title>
+	<link rel="stylesheet" href="/static/css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="/static/css/tipsy.css" type="text/css">
+</head>
+
+<div class="background_body">
+<body>
+		<div class="title_tipsy">
+			<h1>Welcome to Tipsy, <div class="text-info"><em> {{ user_name }} </em></div></h1>
+		</div>
+
+	<div class="form_login">
+	<form action="/login" method="POST">
+		<input type="text" name="email" placeholder="email"></input>
+		<input type="password" name="password" placeholder="password"></input>
+		<input type="submit" value="Log in"></input>
+	</form>
+	</div>
+
+</body>
+</div>
+		
+</html>
